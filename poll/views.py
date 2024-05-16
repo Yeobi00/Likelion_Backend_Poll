@@ -8,7 +8,7 @@ from .serializers import PollSerializer
 def poll_list(request):
     if request.method == 'GET':
         # polls = Poll.objects.all()
-        order  = request.query_params.get('order')
+        order = request.query_params.get('order')
 
         if order == 'oldest':
             polls = Poll.objects.all().order_by('createdAt')
